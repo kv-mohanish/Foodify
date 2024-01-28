@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Foodify - Food Delivery</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster&display=swap">
+
+  <!-- Custom CSS -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    .navbar {
+      background-color: #ed5e5e; /* Zomato Red */
+    }
+
+    .fixedtop {
+      top: 0;
+      z-index: 10;
+    }
+
+    a {
+      color: #e0c514; /* Zomato Red */
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: #ff5252; /* Lighter red for hover */
+    }
+
+    .navbar-toggler {
+      background-color: #ed5e5e; /* Zomato Red */
+      border-radius: 30px;
+    }
+
+    .jumbotron {
+      background-image: url("images/a.jpg");
+      text-align: center;
+      padding-top: 10rem;
+      padding-bottom: 10rem;
+      text-shadow: 2px 2px #000;
+    }
+
+    .lead span {
+      color: #ed5e5e; /* Zomato Red */
+      font-weight: bold;
+    }
+
+    .bg-cover {
+      background-size: cover;
+      color: #ffffff;
+      background-position: center center;
+      position: relative;
+      z-index: -2;
+    }
+
+    .overlay {
+      background-color: #1600a3;
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+    }
+
+    .footer {
+      position: relative;
+      top: 50px;
+    }
+
+    .img-fluid {
+      border-radius: 50%;
+      width: 220px;
+      height: 220px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h3 {
+      padding-top: 30px;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    h2 {
+      font-family: 'Lobster', cursive;
+      padding-top: 15px;
+      padding-left: 50px;
+    }
+
+    h5 {
+      padding-left: 50px;
+    }
+
+    .f {
+      display: block;
+      padding: 9px;
+      width: 100%;
+      position: relative;
+      bottom: 0px;
+      background-color: #ed5e5e; /* Zomato Red */
+      color: #ffffff;
+      text-align: center;
+      height: 57px;
+    }
+
+    .form-control {
+      background-color: #ffffff;
+    }
+
+    .btn {
+      background-color: #ed5e5e; /* Zomato Red */
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .popup-container {
+      padding: 20px;
+      display: inline-block;
+    }
+
+    .popup-container .popup-button {
+      background: #ed5e5e; /* Zomato Red */
+      line-height: 34px;
+      color: #ffffff;
+      padding: 0 20px;
+      border-radius: 8px;
+      display: block;
+      cursor: pointer;
+    }
+
+    .popup-container .popup-button:hover {
+      background: #9a870d; /* Lighter red for hover */
+    }
+
+    .popup-container .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(24, 29, 72, 0.7);
+      z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      transition: 250ms all;
+    }
+
+    .popup-container .popup .popup-inner {
+      width: 400px;
+      box-sizing: border-box;
+      padding: 20px;
+      background: #ed5e5e; /* Zomato Red */
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      top: 150%;
+      transition: 250ms all;
+    }
+
+    .popup-container .popup .popup-inner .popup-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .popup-container .popup .popup-inner .popup-title h6 {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .popup-container .popup .popup-inner .popup-title .popup-close-btn {
+      cursor: pointer;
+      background: #ff5252; /* Lighter red for close button */
+      display: block;
+      line-height: 30px;
+      padding: 0 15px;
+      font-size: 14px;
+      color: #ffffff;
+      border-radius: 3px;
+    }
+
+    .popup-container .popup .popup-inner .popup-content ul li {
+      margin-bottom: 10px;
+    }
+
+    .popup-container .popup .popup-inner .popup-content ul li:last-child {
+      margin-bottom: 0;
+    }
+
+    .popup-container .popup .popup-inner .popup-content ul li input {
+      width: 100%;
+      border: 1px solid #ed5e5e; /* Zomato Red */
+      border-radius: 3px;
+      line-height: 34px;
+      padding: 0 15px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .popup-container .popup .popup-inner .popup-content ul li button {
+      width: 100%;
+      line-height: 34px;
+      background: #ed5e5e; /* Zomato Red */
+      color: #ffffff;
+      cursor: pointer;
+      border-radius: 3px;
+      border: none;
+      font-size: 14px;
+    }
+
+    .popup-container .popup .popup-inner .popup-content ul li button:hover {
+      background: #ff5252; /* Lighter red for hover */
+    }
+
+    .popup-container .popup .transparent-label {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      cursor: pointer;
+    }
+
+    .popup-container > input {
+      display: none;
+    }
+
+    .popup-container > input:checked+.popup {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popup-container > input:checked+.popup .popup-inner {
+      top: 50%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md fixedsticky fixedtop sticky-top">
+    <a class="navbar-brand" href="https://th.bing.com/th/id/OIG1.8X7n6MzJ1J08TsTsnnxk?pid=ImgGn" target="_blank">
+      <img src="https://th.bing.com/th/id/OIG1.8X7n6MzJ1J08TsTsnnxk?pid=ImgGn" width="70" height="70">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="gallery.html">Snaps</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="restaurants.html" target="_blank">Hotels</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="cities.html" target="_blank">Cities</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="about.html" target="_blank">About</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="contact.html" target="_blank">Contact</a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <div class="popup-container">
+          <label class="popup-button" for="login-popup">Login</label>
+          <input type="checkbox" id="login-popup">
+          <div class="popup">
+            <label for="login-popup" class="transparent-label"></label>
+            <div class="popup-inner">
+              <div class="popup-title">
+                <h6>Sign Up</h6>
+                <label for="login-popup" class="popup-close-btn">Close</label>
+              </div>
+              <div class="popup-content">
+                <form action="">
+                  <ul>
+                    <li>
+                      <input type="text" placeholder="Name">
+                    </li>
+                    <li>
+                      <input type="email" placeholder="Email">
+                    </li>
+                    <li>
+                        <input type="text" placeholder="Phone">
+                      </li>
+                      <li>
+                        <input type="text" placeholder="Username">
+                      </li>
+                      <li>    
+                        <input type="password" placeholder="Password">
+                      </li>
+                      <li>
+                        <button type="submit">Log in</button>
+                      </li>
+                    </ul>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <li class="nav-item active">
+            
+          </li>
+        </ul>
+      </div>
+      
+    </nav>
+
+   
+
+    <div class="jumbotron jumbotron bg-cover">
+      <div class="overlay"></div>
+      <div class="container">
+        <h1 class="display-3 mb-1">Foodify</h1>
+        <p class="lead"> <span>Food Delivery</span></p>        
+      </div>
+    </div>
+  
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+           <form class="form-inline">
+              <input class="form-control mr-sm-2"  type="text" placeholder="Food / Restaurant">
+        
+              <button class="btn btn-outline my-2 my-sm-0" type="submit">Search<a href="404.html"></a></button>
+           </form>
+          <h3>Explore curated lists of top restaurants, cafes, pubs, and bars nearby, based on trends</h3>
+        </div>
+      </div>
+    </div>
+
+    <section class="container pt-3 mb-3">
+      <div class="row align-items-center content">
+      <div class="col-md-6 order-1  order-md-2">
+      <img class="img-fluid" src="images\doorstep.jpg">
+      </div>
+      <div class="col-md-6 order-2 order-md-1">
+      <div class="row" id="change-align">
+          <div class="col-10 col-lg-8">
+          <h2>Find restaurants and cafés that deliver right to your doorstep</h2>  <br>
+          <div align="center"><h5>Eat eat Eat</h5></div> <br>
+          </div>
+      </div>
+      </div>       
+      </div>
+  </section>
+
+  <section class="container pt-3 mb-3">
+      <div class="row align-items-center content">
+      <div class="col-md-6 order-1  order-md-2">
+      <img class="img-fluid" src="images\menu.jpg">
+      </div>
+      <div class="col-md-6 order-2 order-md-1">
+      <div class="row">
+          <div class="col-10 col-lg-8">
+          <h2>Flip through the menus and make your order in seconds</h2> <br>
+          </div>
+      </div>
+      </div>       
+      </div>
+  </section>
+
+  <section class="container pt-3 mb-3">
+      <div class="row align-items-center content">
+      <div class="col-md-6 order-1  order-md-2">
+      <img class="img-fluid" src="images\gps.jpg">
+      </div>
+      <div class="col-md-6 order-2 order-md-1">
+      <div class="row" id="change-align">
+          <div class="col-10 col-lg-8">
+          <h2>Track your order at all times, from the restaurant to your doorstep</h2> <br>
+          </div>
+      </div>
+      </div>       
+      </div>
+  </section>
+
+  <div class="f">
+    <span class="f-copy">Copyright &copy;  2020  Foodify 🍔</span>
+    <a style="text-decoration: none;color:white;float:right;" class="fa fa-instagram fa-3x social" href="http://www.instagram.com/__trapple__" target="_blank"></a>
+  
+  </div>
+  
+ 
+
+
+
+
+      <script src="script.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+   </body>
+</html>
+
