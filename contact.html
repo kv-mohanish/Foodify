@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="stylesheet" href="css/contact.css">
+    <title>Contact Us</title>
+    <link rel="icon" href="images/logo1.jpg" type="image/x-icon">
+    <style>
+        /* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+}
+
+/* Header styling */
+h3 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Container styling */
+.container {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #fff; /* White border */
+  background-color: #000; /* Black background */
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #fff; /* White border */
+  background-color: transparent;
+  color: #fff; /* White text */
+}
+
+input[type="submit"] {
+  width: auto;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
+  cursor: pointer;
+}
+
+/* Image styling */
+.tcimg {
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
+  border-radius: 50%; /* Circle shape */
+  border: 2px solid #fff; /* White border */
+  padding: 5px; /* Increase padding if necessary */
+}
+
+/* Select and Option styling */
+select {
+  /* Additional styles for select element */
+  appearance: none; /* Remove default dropdown arrow */
+  -webkit-appearance: none; /* Safari and Chrome */
+  -moz-appearance: none; /* Firefox */
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #fff; /* White border */
+  background-color: transparent;
+  color: #fff; /* White text */
+}
+
+/* Style options within the select */
+option {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+}
+
+    </style>
+</head>
+<body>
+    <img src="images\logo1.jpg" alt="logo" class="tcimg">
+    <h3>Contact</h3>
+
+    <div class="container">
+        <form action="404.html">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+            <label for="email">Email</label>
+            <input type="text" placeholder="Your Email.." name="email" required>
+
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="india">India</option>
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+                <option value="england">England</option>
+                <option value="china">China</option>
+                <option value="south aftrica">South Africa</option>
+                <option value="japan">Japan</option>
+                <option value="nz">New Zealand</option>
+                <option value="russia">Russia</option>
+                <option value="uae">UAE</option>
+                <option value="qatar">Qatar</option>
+                <option value="oman">Oman</option>
+                <option value="bahrain">Bahrain</option>
+            </select>
+
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Foodify - Gallery</title>
+    <link rel="icon" href="images/logo1.jpg" type="image/x-icon"> 
+    <link rel="stylesheet" href="css/gallery.css">
+    <style>
+        body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: black; /* Set background color to black */
+  color: white; /* Set text color to white */
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tcimg {
+  width: 200px; /* Adjust logo width */
+  height: 200px; /* Adjust logo height */
+  border-radius: 50%; /* Make logo circular */
+  border: 5px solid white; /* Add white border around logo */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Add white shadow to logo */
+  margin-top: 50px; /* Adjust top margin */
+}
+
+.header {
+  margin-top: 30px;
+}
+
+.C1 {
+  color: white; /* Set header text color to white */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.column {
+  flex: 0 0 calc(25% - 20px);
+  max-width: calc(25% - 20px);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.column img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.column img:hover {
+  transform: scale(1.1);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <img src="images/logo1.jpg" alt="logo" class="tcimg">
+    </div>
+    <div class="header">
+       <center> <h1 class="C1">GALLERY</h1></center>
+    </div>
+    <div class="row"> 
+        <div class="column">
+            <img id="myImg1" src="images/gallery/1.jpg" alt="food">
+            <img id="myImg2" src="images/gallery/2.jpg" alt="food">
+            <img id="myImg3" src="images/gallery/3.webp" alt="food">
+            <img id="myImg4" src="images/gallery/4.jpg" alt="food">
+            <img id="myImg5" src="images/gallery/5.webp" alt="food">
+            <img id="myImg6" src="images/gallery/7.webp" alt="food">
+            <img id="myImg7" src="images/gallery/15.jpg" alt="food">
+        </div>
+        <div class="column">
+            <img id="myImg8" src="images/gallery/8.jpg" alt="food">
+            <img id="myImg9" src="images/gallery/9.webp" alt="food">
+            <img id="myImg10" src="images/gallery/10.webp" alt="food">
+            <img id="myImg11" src="images/gallery/11.webp" alt="food">
+            <img id="myImg12" src="images/gallery/12.webp" alt="food">
+            <img id="myImg13" src="images/gallery/13.jpg" alt="food">
+            <img id="myImg14" src="images/gallery/21.jpg" alt="food">
+        </div>  
+        <div class="column">
+            <img id="myImg15" src="images/gallery/14.jpg" alt="food">
+            <img id="myImg16" src="images/gallery/6.webp" alt="food">
+            <img id="myImg17" src="images/gallery/16.jpg" alt="food">
+            <img id="myImg18" src="images/gallery/17.jpg" alt="food">
+            <img id="myImg19" src="images/gallery/18.jpg" alt="food">
+            <img id="myImg20" src="images/gallery/19.jpg" alt="food">
+        </div>
+        <div class="column">
+            <img id="myImg21" src="images/gallery/22.jpg" alt="food">
+            <img id="myImg22" src="images/gallery/23.jpg" alt="food">
+            <img id="myImg23" src="images/gallery/24.jpg" alt="food">
+            <img id="myImg24" src="images/gallery/25.jpg" alt="food">
+            <img id="myImg25" src="images/gallery/26.jpg" alt="food">
+            <img id="myImg26" src="images/gallery/27.webp" alt="food">
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+    <script src="gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="stylesheet" href="css/cities.css">
+    <title>Foodify - Cities</title>
+    <link rel = "icon" href ="images/logo1.jpg" 
+        type = "image/x-icon">
+        <style>
+          /* CSS code for Foodify - Cities */
+
+/* Set the font family and size for the whole document */
+body {
+  font-family: 'Poppins', sans-serif; /* Use Google Font 'Poppins' */
+  font-size: 16px;
+  color: white; /* Set default text color to white */
+  background: #000; /* Set default background color to black */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+/* Set the logo image to be responsive, circular, and centered */
+.tcimg {
+  display: block;
+  max-width: 150px; /* Adjust logo size */
+  height: auto;
+  margin: 30px auto; /* Center the logo */
+  border-radius: 50%; /* Make the image circular */
+  overflow: hidden; /* Hide overflow to ensure perfect circle */
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3); /* White shadow effect */
+  animation: rotateLogo 3s linear infinite; /* Rotate logo infinitely */
+}
+
+/* Rotate logo animation */
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Set the header to have a gradient background and white text */
+.header {
+  background: linear-gradient(to right, #00b4db, #0083b0); /* Gradient background */
+  color: white;
+  padding: 20px; /* Increase the header padding */
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Black shadow effect */
+}
+
+/* Set the row to be a flex container with wrap and space-around */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px 0; /* Add padding between rows */
+}
+
+/* Set the column to have a 30% width and a margin */
+.column {
+  width: calc(33.33% - 20px); /* Adjust column width */
+  margin: 10px; /* Add margin */
+}
+
+/* Set the paragraph to have a white background, rounded corners, and padding */
+p {
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Add padding */
+  text-align: center; /* Center align text */
+  transition: transform 0.3s ease; /* Smooth transition */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  animation: fadeInUp 0.5s ease forwards; /* Fade-in animation */
+}
+
+/* Add hover effect to paragraphs */
+p:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Lighter semi-transparent white background on hover */
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Add bold effect to paragraphs on click */
+p:active {
+  font-weight: bold; /* Make the text bold */
+}
+
+/* Add animation to paragraphs */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+        </style> 
+  </head>      
+    <body>
+        
+        <img src="images\logo1.jpg" alt="logo" class="tcimg">
+
+        <div class="header">
+            <h1>We Extend Our Welcome To You Here</h1>
+            
+          </div>
+
+  <div class="row"> 
+    <div class="column">
+      <p style="width:100%">Udupi</p>
+      <p style="width:100%">Manipal</p>
+      <p style="width:100%">Ambagilu</p>
+      <p style="width:100%">Malpe</p>
+      <p style="width:100%">Ambalpadi</p>
+      <p style="width:100%">Mulur</p>
+      <p style="width:100%">Saligrama</p>
+      <p style="width:100%">Karkala</p>
+      <p style="width:100%">Kodavoor</p>
+      <p style="width:100%">Hoode Beach</p>
+      <p style="width:100%">Someshwara</p>
+      <p style="width:100%">Kundapura</p>
+      <p style="width:100%">Parkala</p>
+    </div>
+    
+    <div class="column">
+      <p style="width:100%">Mangalore</p>
+      <p style="width:100%">Kulur</p>
+      <p style="width:100%">Bajpe</p>
+      <p style="width:100%">Bondel</p>
+      <p style="width:100%">Manjanady</p>
+      <p style="width:100%">Mulki</p>
+      <p style="width:100%">Farangipet</p>
+      <p style="width:100%">Deralakatte</p>
+      <p style="width:100%">Surathkal</p>
+      <p style="width:100%">Statebank</p>
+      <p style="width:100%">Kavoor</p>
+      <p style="width:100%">Vamanjoor</p>
+      <p style="width:100%">Talapady</p>
+    </div>
+     
+    <div class="column">
+      <p style="width:100%">Kasaragod</p>
+      <p style="width:100%">Kanhangad</p>
+      <p style="width:100%">Nileshwar</p>
+      <p style="width:100%">Uppala</p>
+      <p style="width:100%">Trikaripur</p>
+      <p style="width:100%">Kumbla</p>
+      <p style="width:100%">Cheruvathur</p>
+      <p style="width:100%">Bekal</p>
+      <p style="width:100%">Kunjathur</p>
+      <p style="width:100%">Hosabettu</p>
+      <p style="width:100%">Cherkala</p>
+      <p style="width:100%">Manjeshwaram</p>
+      <p style="width:100%">Bare</p>
+    </div>
+    
+  </div>
+  
+    </body>
+
+</html>    

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Foodify - Restaurants</title>
+    <link rel="stylesheet" href="css/restaurants.css">
+    <link rel="icon" href="images/logo1.jpg" type="image/x-icon">
+    <style>
+      body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: black; /* Set background color to black */
+  color: white; /* Set text color to white */
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.center-logo {
+  margin-top: 50px;
+}
+
+.logo {
+  width: 200px; /* Adjust logo width */
+  height: 200px; /* Adjust logo height */
+  border-radius: 50%; /* Make logo circular */
+  border: 5px solid white; /* Add white border around logo */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Add white shadow to logo */
+}
+
+.header {
+  margin-top: 30px;
+}
+
+.C1 {
+  color: white; /* Set header text color to white */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.column {
+  flex: 0 0 calc(25% - 20px);
+  max-width: calc(25% - 20px);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.column img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.column img:hover {
+  transform: scale(1.1);
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="center-logo">
+        <img src="images/logo1.jpg" alt="logo" class="logo">
+    </div>
+
+    <div class="header">
+        <h1 class="C1">Restaurants</h1>
+    </div>
+        <div class="row"> 
+            <div class="column">
+              <img id="resImg1" src="images/restaurants/1.jpg" style="width:100%" alt="Foodies Unites">
+              <img id="resImg3" src="images/restaurants/3.jpg" style="width:100%" alt="Nerds Eat First">
+              <img id="resImg4" src="images/restaurants/4.jpg" style="width:100%" alt="Brownie Bites">
+              <img id="resImg5" src="images/restaurants/5.jpg" style="width:100%" alt="Chops N’ Drinks">
+              <img id="resImg18" src="images/restaurants/18.jpg" style="width:100%" alt="Café N’ Chill">
+              
+            </div>
+            <div class="column">
+              <img id="resImg8" src="images/restaurants/8.jpg" style="width:100%" alt="Food O’Clock">
+              <img id="resImg9" src="images/restaurants/9.jpg" style="width:100%" alt="Let’S Ketchup">
+              <img id="resImg2" src="images/restaurants/2.jpg" style="width:100%" alt="Mama’S Diner">
+              <img id="resImg10" src="images/restaurants/10.jpg" style="width:100%" alt="Breakfast House">
+              <img id="resImg11" src="images/restaurants/11.jpg" style="width:100%" alt=" Yummy Delights">
+              <img id="resImg19" src="images/restaurants/19.jpg" style="width:100%" alt="Bella Kitchen">
+              
+              
+            </div>  
+            <div class="column">
+              <img id="resImg14" src="images/restaurants/14.jpg" style="width:100%" alt="Rock and Roll cafe ">
+              <img id="resImg6" src="images/restaurants/6.jpg" style="width:100%" alt="Eatallyoucan">
+              <img id="resImg16" src="images/restaurants/16.jpg" style="width:100%" alt="Sunrise Café">
+              <img id="resImg17" src="images/restaurants/17.jpg" style="width:100%" alt="Delicious Bites">
+              <img id="resImg12" src="images/restaurants/12.jpg" style="width:100%" alt="Doublemunch Restaurant">
+              
+              
+            </div>
+            <div class="column">
+              <img id="resImg21" src="images/restaurants/21.jpeg" style="width:100%" alt="Spicy Dragon">
+              <img id="resImg7" src="images/restaurants/7.jpg" style="width:100%" alt="Very Homemade Food">
+              <img id="resImg13" src="images/restaurants/13.jpg" style="width:100%" alt="Alpine Meadow">
+              <img id="resImg15" src="images/restaurants/15.jpg" style="width:100%" alt="Food Republic">
+              <img id="resImg20" src="images/restaurants/20.jpg" style="width:100%" alt="Warm Delight">
+                
+            </div>
+
+            <div id="resModal" class="modal">
+                <span class="close1">&times;</span>
+                <div id="caption"></div>
+                <img class="modal-content" id="img01">
+                
+              </div>
+              <script src="restaurants.js"></script>
+
+
+     </body>
+  
+
+ </html> 
